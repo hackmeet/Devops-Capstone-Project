@@ -23,7 +23,9 @@ pipeline {
         stage('update deployment file') {
             steps {
                 // replace the latest tag with the BUILD_NUMBER
-                sh "sed -i 's/website-app:.*/website-app:${BUILD_NUMBER}/g' deployment.yaml"
+                //sh "sed -i 's/website-app:.*/website-app:${BUILD_NUMBER}/g' deployment.yaml"
+                //sh "sed -i 's/website-app:.*/website-app:${BUILD_NUMBER}/g' deployment.yaml"
+                sh "sed -i 's|image: meetvasani/capstone:[^ ]*|image: meetvasani/capstone:${BUILD_NUMBER}/g'|' deployment.yaml"
             }
         }
 
