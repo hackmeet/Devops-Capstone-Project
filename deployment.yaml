@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
         - name: website-app
-          image: meetvasani/capstone:6
+          image: meetvasani/capstone:7
           ports:
             - containerPort: 80
           resources:
