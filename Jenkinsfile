@@ -34,7 +34,6 @@ pipeline {
                 withCredentials([string(credentialsId: 'GITHUB_TOKEN', variable: 'GITHUB_TOKEN')]) {
                     sh 'git config --global user.email "w.vasanimeet@gmail.com"'
                     sh 'git config --global user.name "meet vasani"'
-                    sh 'git checkout main'
                     sh 'git add deployment.yaml'
                     sh 'git commit -m "updated deployment file with build number ${BUILD_NUMBER}"'
                     sh 'git push https://${GITHUB_TOKEN}@github.com/hackmeet/Devops-Capstone-Project HEAD:main'
